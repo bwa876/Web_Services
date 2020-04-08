@@ -1,0 +1,399 @@
+<!-- Home Page -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Weather Information</title>
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <div class thermometer_css>
+  	<style>
+        #thermometer_inner { width: 95%; height: 20%; margin:2.5%; background: red; position:absolute; bottom:10%;}
+        #thermometer_outer {height:400px; position:relative;}
+        #temp_today { color:white; text-align:center; position:relative; top:0%; }
+        body{
+        /*image sourced from https://www.google.com/url?sa=i&url=https%3A%2F%2Fopenweathermap.org%2F&psig=AOvVaw20P3Gfg93XrGNztO2nPhr0&ust=1585803443098000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDXlKq4xugCFQAAAAAdAAAAABAD*/
+        background-image: url('./img/weather.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        .container{
+        /* margin-top: 2%; */
+        padding:2%;
+        opacity: 0.9;
+        background: #FFFFFF;
+        }
+  	</style>
+  </div>
+  </head>
+  <body>
+  	<div class="container">
+		<br>
+		<h1 id="heading" style="text-align:center">Weather Forecast</h1>
+		<hr>
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-2">
+            <!-- source for images: https://www.iconfinder.com/iconsets/weather-line-19 -->
+            <img id="image_today" class="img-fluid" src="img/clear-day.png" alt="Today's Weather Icon">
+          </div>
+          <div class="col-10">
+            <h5>
+              Local Date/Time: <span id="local_time">2020-04-01 11:00AM</span><br>
+              Precipitation: <span id="precip_today">10%</span><br>
+              Humidity: <span id="humidity_today">80%</span><br>
+              Wind Speed: <span id="wind_today">5</span> mph<br>
+              Summary: <span id="summary_today">Summary Info</span>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+
+      </div>
+      <div class="col-4">
+        <div class="card" >
+          <div id="thermometer_outer">
+            <div id="thermometer_inner"><p id="temp_today" class="h3"> 0 F</p></div>
+          </div>
+          <div class="card-body">
+              <h5 class="text-center">Thermometer</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+		<br>
+		<h2 class="h1" style="text-align:center;">5 Day Forecast</h2>
+		<hr>
+		<div class="row" id="5_day_forecast">
+
+<!-- /////////////////DAY 1 CARD////////////////////////////////////// -->
+      <div style="width: 20%;">
+      <div class="card">
+      <div class="card-body">
+       <h5 class="card-title" id = "day1Name">Day 1<!-- List Day of the Week Here --></h5>
+        <p class="card-text" id = "highsLowsDay1">
+         High:<!--List Temperature High --> 
+         Low: <!-- List Temperature Low -->
+         Sunrise: <!-- List Time of Sunrise -->
+         Sunset: <!-- List Time of Sunset -->
+      </div>
+   </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////// -->
+
+<!-- /////////////////DAY 2 CARD////////////////////////////////////// -->
+<div style="width: 20%;">
+  <div class="card">
+      <div class="card-body">
+       <h5 class="card-title" id = "day2Name"><!-- List Day of the Week Here --></h5>
+        <p class="card-text" id = "highsLowsDay2">High:<!--List Temperature High --> 
+         Low: <!-- List Temperature Low -->
+         Sunrise: <!-- List Time of Sunrise -->
+         Sunset: <!-- List Time of Sunset -->
+       </p>
+      </div>
+   </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////// -->
+
+<!-- /////////////////DAY 3 CARD////////////////////////////////////// -->
+
+<div style="width: 20%;">
+  <div class="card">
+      <div class="card-body">
+       <h5 class="card-title" id = "day3Name"><!-- List Day of the Week Here --></h5>
+        <p class="card-text" id = "highsLowsDay3">High:<!--List Temperature High --> 
+         Low: <!-- List Temperature Low -->
+         Sunrise: <!-- List Time of Sunrise -->
+         Sunset: <!-- List Time of Sunset -->
+       </p>
+      </div>
+   </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////// -->
+
+<!-- /////////////////DAY 4 CARD////////////////////////////////////// -->
+<div style="width: 20%;">
+  <div class="card">
+      <div class="card-body">
+       <h5 class="card-title" id = "day4Name"><!-- List Day of the Week Here --></h5>
+        <p class="card-text" id = "highsLowsDay4">High:<!--List Temperature High --> 
+         Low: <!-- List Temperature Low -->
+         Sunrise: <!-- List Time of Sunrise -->
+         Sunset: <!-- List Time of Sunset -->
+       </p>
+      </div>
+   </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////// -->
+
+<!-- /////////////////DAY 5 CARD////////////////////////////////////// -->
+
+<div style="width: 20%;">
+  <div class="card">
+      <div class="card-body">
+       <h5 class="card-title" id = "day5Name"><!-- List Day of the Week Here --></h5>
+        <p class="card-text" id = "highsLowsDay5">High:<!--List Temperature High --> 
+         Low: <!-- List Temperature Low -->
+         Sunrise: <!-- List Time of Sunrise -->
+         Sunset: <!-- List Time of Sunset -->
+       </p>
+      </div>
+   </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////// -->
+
+
+
+		</div>
+		<br>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script>
+    //helper functions
+    var dayOfWeek = "";
+    function formatDate(date, month, year)
+    {
+      month = (month.length < 2) ? ('0' + month) : month;
+      date = (date.length < 2)? ('0' + date) : date;
+      return [year,month,date].join('-');
+    }
+    function getDayofWeek(date, month, year){
+      var week_names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      dayOfWeek =  week_names[new Date([month,date,year].join('-')).getDay()];
+    }
+    function getFarenheitTemp(temp){
+      return (9*temp/5)+32;
+    }
+    //run when the document object model is ready for javascript code to execute
+		$(document).ready(function() {
+			var url =
+			'https://api.weatherstack.com/forecast?access_key=5bc82451636190abd9d7afe6fe9b20b5&query=18.0149,-76.7645&forecast_days=6'; //weatherstack API call
+
+			$.ajax({url:url, 
+				dataType:"jsonp"})
+				.then(function(data) {
+					console.log(data);
+					console.log("Current Temp: " + data.current.temperature);
+					var current_time = data.location.localtime;//Retrieve the current timestamp
+          var curr_time = new Date(current_time); //casting to new var
+          console.log(curr_time.getDay());
+
+      	/*
+					Read the current weather information from the data point values [https://weatherstack.com/documentation] to
+					update the webpage for today's weather:
+					1. image_today : This should display an image for today's weather.
+									 This will use the icon that is returned by the API. You will be looking for the weather_icons key in the response.
+
+          2. location: This should be appended to the heading. For eg: "Today's Weather Forecast - Boulder"
+
+					3. temp_today : This will be updated to match the current temperature. Use the getFarenheitTemp to convert the temperature from celsius to farenheit.
+
+					4. thermometer_inner : Modify the height of the thermometer to match the current temperature. This means if the
+										   current temperature is 32 F, then the thermometer will have a height of 32%.  Please note,
+										   this thermometer has a lower boundary of 0 and upper boundary of 100.
+
+					5. precip_today : This will be updated to match the current probability for precipitation. Be sure to check the unit of the value returned and append that to the value displayed.
+
+					6. humidity_today : This will be updated to match the current humidity percentage (make sure this is listed as a
+										percentage %)
+
+					7. wind_today : This will be updated to match the current wind speed.
+
+					8. summary_today: This will be updated to match the current summary for the day's weather.
+
+				*/
+
+				/* Process the daily forecast for the next 5 days */
+        //helper function - to be used to get the key for each of the 5 days in the future when creating cards for forecasting weather
+
+       ////////////Information retrieved from weatherstack///////////
+       //1) image today/////////////////////////////////////////////
+       var image = data.current.weather_icons; //get first element in array of weather icons
+       document.getElementById("image_today").src = image;
+       /////////////////////////////////////////////////////////////
+
+       //2) heading-- i.e the location/////////////
+       var heading_location_area = data.location.name;
+       var heading_location_country = data.location.country;
+       document.getElementById('heading').append(": " +heading_location_area + ", " + heading_location_country);
+
+      /////////////////////////////////////////////////////////////
+
+      //3) temperature today //////////////////////////////////
+      var temp_today_cel = data.current.temperature; //NB: This is given in Celcius
+      var temp_today_far = getFarenheitTemp(temp_today_cel); //convert to farenheit
+      /////////////////////////////////////////////////////////////
+
+
+
+
+
+      //4) thermometer inner /////////////////////////////////
+      document.getElementById("thermometer_inner").style.height=temp_today_far+"%";
+      document.getElementById("temp_today").innerHTML = temp_today_far + " F";
+      /////////////////////////////////////////////////////////////
+
+      //prcip
+      var precip = data.current.precip;
+      document.getElementById("precip_today").innerHTML = precip+"%";
+      //humidity 
+      var humidity = data.current.humidity;
+      document.getElementById("humidity_today").innerHTML = humidity+ "%";
+      //wind
+      var wind = data.current.wind_speed;
+      document.getElementById("wind_today").innerHTML = wind + " kmh";
+      //summary
+      var summary = data.current.weather_descriptions;
+      document.getElementById("summary_today").innerHTML = summary;
+
+
+      ///ADJUST  DATE///
+      var time = data.location.localtime;
+      console.log(time);
+      document.getElementById("local_time").innerHTML = time;
+      /////////////////////////////////////////////////////////////
+
+
+        function getKey(i){
+            var date =new Date();
+            var d = date.getDate() + i;
+            var m = date.getMonth() + 1;
+            var y = date.getFullYear();
+            var key_forecast = formatDate(d.toString(),m.toString(),y.toString()).toString();
+            getDayofWeek(d,m,y);
+            return data.forecast[key_forecast];
+        }
+				/*
+					For the next 5 days you'll need to add a new card listing:
+						1. The day of the week
+						2. The temperature high
+						3. The temperature low
+            4. Sunrise
+            5. Sunset
+
+          <Hint1 - To access the forecast data> You need to make sure to carefully see the JSON response to see how to access the forecast data. While creating the key to access forecast data make sure to convert it into a string using the toString() method.
+
+					<Hint2 - To add the cards to the HTML> - Make sure to use string concatenation to add the html code for the daily weather cards.  This should
+					be set to the innerHTML for the 5_day_forecast.
+				*/
+
+
+        //day 1 -- tommorrow 
+        var day1 = getKey(1);
+        var day1DateObject = day1.date;
+        var day1Cast = new Date(day1DateObject);
+        console.log(day1Cast);
+        var dateStrDay1 = day1Cast.toString();
+        var finalday1 = dateStrDay1.split(" ",1);
+        console.log(finalday1[0]); //WORKS!!
+        document.getElementById("day1Name").innerHTML = finalday1;
+
+        var tempHighCelDay1 = day1.maxtemp; //works!
+        var tempHighFarDay1 = getFarenheitTemp(tempHighCelDay1);
+        console.log("High Day 1: " + tempHighFarDay1);
+        var tempLowCelDay1 = day1.mintemp;
+        var tempLowFarDay1 = getFarenheitTemp(tempLowCelDay1);
+        console.log("Low Day 1: " + tempLowFarDay1);
+
+        var astroDay1 = day1.astro;
+        var sunriseDay1 = astroDay1.sunrise;
+        var sunsetDay1 = astroDay1.sunset;
+
+        
+        document.getElementById('highsLowsDay1').innerHTML = "High: " + tempHighFarDay1 + "<br>" + "Low: " + tempLowFarDay1 + "<br>" + "Sunrise: " + sunriseDay1 + "<br>" + "Sunset: " + sunsetDay1;
+        
+
+        //day 2
+        var day2 = getKey(2);
+        var day2DateObject = day2.date;
+        var day2Cast = new Date(day2DateObject);
+        console.log(day2Cast);
+        var dateStr = day2Cast.toString();
+        var finalday = dateStr.split(" ",1);
+        console.log(finalday[0]); //WORKS!!
+        document.getElementById("day2Name").innerHTML = finalday;
+
+        var tempHighCelDay2 = day2.maxtemp; //works!
+        var tempHighFarDay2 = getFarenheitTemp(tempHighCelDay2);
+        var tempLowCelDay2 = day2.mintemp;
+        var tempLowFarDay2 = getFarenheitTemp(tempLowCelDay2);
+        var astroDay2 = day2.astro;
+        var sunriseDay2 = astroDay2.sunrise;
+        var sunsetDay2 = astroDay2.sunset;
+
+        document.getElementById('highsLowsDay2').innerHTML = "High: " + tempHighFarDay2 + "<br>" + "Low: " + tempLowFarDay2 + "<br>" + "Sunrise: " + sunriseDay2 + "<br>" + "Sunset: " + sunsetDay2;
+
+
+        //day 3
+        var day3 = getKey(3);
+        var day3DateObject = day3.date;
+        var day3Cast = new Date(day3DateObject);
+        var dateStrDay3 = day3Cast.toString();
+        var finalday3 = dateStrDay3.split(" ",1);
+        document.getElementById("day3Name").innerHTML = finalday3;
+
+        var tempHighCelDay3 = day3.maxtemp; //works!
+        var tempHighFarDay3 = getFarenheitTemp(tempHighCelDay3);
+        var tempLowCelDay3 = day3.mintemp;
+        var tempLowFarDay3 = getFarenheitTemp(tempLowCelDay3);
+
+        var astroDay3 = day3.astro;
+        var sunriseDay3 = astroDay3.sunrise;
+        var sunsetDay3 = astroDay3.sunset;
+
+        
+        document.getElementById('highsLowsDay3').innerHTML = "High: " + tempHighFarDay3 + "<br>" + "Low: " + tempLowFarDay3 + "<br>" + "Sunrise: " + sunriseDay3 + "<br>" + "Sunset: " + sunsetDay3;
+
+        //day 4
+        var day4 = getKey(4);
+        var day4DateObject = day4.date;
+        var day4Cast = new Date(day4DateObject);
+        var dateStrDay4 = day4Cast.toString();
+        var finalday4 = dateStrDay4.split(" ",1);
+        document.getElementById("day4Name").innerHTML = finalday4;
+
+        var tempHighCelDay4 = day4.maxtemp; //works!
+        var tempHighFarDay4 = getFarenheitTemp(tempHighCelDay4);
+        var tempLowCelDay4 = day4.mintemp;
+        var tempLowFarDay4 = getFarenheitTemp(tempLowCelDay4);
+
+        var astroDay4 = day4.astro;
+        var sunriseDay4 = astroDay4.sunrise;
+        var sunsetDay4 = astroDay4.sunset;
+
+        
+        document.getElementById('highsLowsDay4').innerHTML = "High: " + tempHighFarDay4 + "<br>" + "Low: " + tempLowFarDay4 + "<br>" + "Sunrise: " + sunriseDay4 + "<br>" + "Sunset: " + sunsetDay4;
+
+        //day5
+        var day5 = getKey(5);
+        var day5DateObject = day5.date;
+        var day5Cast = new Date(day5DateObject);
+        var dateStrDay5 = day5Cast.toString();
+        var finalday5 = dateStrDay5.split(" ",1);
+        document.getElementById("day5Name").innerHTML = finalday5;
+
+        var tempHighCelDay5 = day5.maxtemp; //works!
+        var tempHighFarDay5 = getFarenheitTemp(tempHighCelDay5);
+        var tempLowCelDay5 = day5.mintemp;
+        var tempLowFarDay5 = getFarenheitTemp(tempLowCelDay5);
+
+        var astroDay5 = day5.astro;
+        var sunriseDay5 = astroDay5.sunrise;
+        var sunsetDay5 = astroDay5.sunset;
+
+        
+        document.getElementById('highsLowsDay5').innerHTML = "High: " + tempHighFarDay5 + "<br>" + "Low: " + tempLowFarDay5 + "<br>" + "Sunrise: " + sunriseDay5 + "<br>" + "Sunset: " + sunsetDay5;
+
+			})
+		})
+ 	</script>
+
+</body>
+</html>
